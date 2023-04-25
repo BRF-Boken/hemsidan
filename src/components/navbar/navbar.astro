@@ -1,0 +1,72 @@
+---
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
+const menuitems = [
+  {
+    title: "Senaste nytt",
+    path: "/blog",
+  },
+  {
+    title: "Om föreningen",
+    path: "#",
+    children: [
+      { title: "Mäklarinfo", path: "/" },
+      { title: "Styrelsen", path: "#" },
+      { title: "Stadgar & Ordningsregler", path: "#" },
+      { title: "Blanketter & Dokument", path: "/404" },
+    ],
+  }
+];
+---
+
+<Container>
+  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+    <Astronav>
+      <div class="flex w-full lg:w-auto items-center justify-between">
+        <a href="/" class="text-lg"
+          ><span class="font-bold text-mono-800 text-bteal text-3xl">BRF</span><span
+            class="text-mono-500 text-bteal text-3xl">Boken</span
+          >
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-4 h-4 text-gray-800" />
+        </div>
+      </div>
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="flex flex-col lg:flex-row lg:gap-3 text-white">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
+                )}
+
+                {!item.children && (
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex lg:px-3 py-2 text-gray-600 hover:text-white-900">
+                      {item.title}
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+        <div class="lg:hidden flex items-center mt-3 gap-4">
+          
+          <!--<Link href="#" size="md" block>Link</Link>-->
+        </div>
+      </MenuItems>
+    </Astronav>
+    
+  </header>
+</Container>

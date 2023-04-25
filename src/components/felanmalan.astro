@@ -1,0 +1,48 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Felanmälan",
+    description:
+      "Felanmälan dagtid (vardagar 07.00-16.00) görs direkt till ansvarig fastighetstekniker via mail eller telefon. Vid AKUTA fel utanför ordinarie arbetstid samt helger kontaktas Axcell fastighetsjour på 020-77 85 00 (även växelnummer dagtid). Övriga ärenden kan mailas direkt till fastighetstekniker alternativt till info@axcell.se ",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "Fastighetstekniker & Fastighetsskötare:",
+    description:
+      "Roger Svensson - Telefon: 070-526 50 39, roger.svensson@axcell.se",
+    icon: "ic:round-contact-support",
+  },
+  {
+    title: "Ekonomisk förvaltning",
+    description:
+      "HSB Sydost, Telefon: 010-451 30 00, kundtjanst.sydost@hsb.se",
+    icon: "ic:outline-attach-money",
+  },
+  {
+    title: "Kontakt",
+    description:
+      "Styrelsen nås lättas via email: styrelsen(a)brfboken.nu",
+    icon: "ic:outline-people",
+  },
+];
+---
+
+
+<div class="grid sm:grid-cols-2 md:grid-cols-2 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start text-white">
+        <div class="mt-1 bg-black rounded-full  p-2 w-12 h-12 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

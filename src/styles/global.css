@@ -1,0 +1,7 @@
+body {
+    background-color: #27323A;
+}
+.imgshape img {
+    border-radius: 60% 20% 20%;
+    box-shadow: 10px 10px 20px #171d22;
+}
