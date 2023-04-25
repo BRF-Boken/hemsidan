@@ -8,6 +8,11 @@ import "@fontsource/open-sans"; // Defaults to weight 400.
 
 export default defineConfig({
   site: 'https://brfboken.nu',
+  output: 'static',
+  outDir: './docs',
+  build: {
+    assets: 'astro'
+  },
   integrations: [
     tailwind(),
     image({
