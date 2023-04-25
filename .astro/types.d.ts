@@ -111,35 +111,12 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"blog": {
-"complete-guide-fullstack-development.md": {
-  id: "complete-guide-fullstack-development.md",
-  slug: "complete-guide-fullstack-development",
+"welcome.md": {
+  id: "welcome.md",
+  slug: "welcome",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] },
-},
-"team": {
-"janette-lynch.md": {
-  id: "janette-lynch.md",
-  slug: "janette-lynch",
-  body: string,
-  collection: "team",
-  data: InferEntrySchema<"team">
-} & { render(): Render[".md"] },
-"marcell-ziemann.md": {
-  id: "marcell-ziemann.md",
-  slug: "marcell-ziemann",
-  body: string,
-  collection: "team",
-  data: InferEntrySchema<"team">
-} & { render(): Render[".md"] },
-"robert-palmer.md": {
-  id: "robert-palmer.md",
-  slug: "robert-palmer",
-  body: string,
-  collection: "team",
-  data: InferEntrySchema<"team">
 } & { render(): Render[".md"] },
 },
 
